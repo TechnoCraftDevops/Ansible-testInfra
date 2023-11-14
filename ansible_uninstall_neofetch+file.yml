@@ -1,0 +1,14 @@
+---
+- hosts: all
+  become: true
+  tasks:
+  - name: Remove lulu file
+    file:
+      path: /home/mohammed/lulu.txt
+      state: absent
+
+  - name: Uninstall htop & neofetch
+    apt:
+      name: ['htop', 'neofetch']
+      state: absent
+

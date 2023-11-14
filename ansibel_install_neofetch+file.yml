@@ -1,0 +1,15 @@
+---
+- hosts: all
+  become: true
+  tasks:
+  - name: Update & upgrade
+    apt:
+      upgrade: yes
+      update_cache: yes
+
+  - name: Install linux utils
+    apt:
+      name: ['htop', 'neofetch', 'nano', 'iputils-ping', 'net-tools']
+      state: present
+      update_cache: yes
+
